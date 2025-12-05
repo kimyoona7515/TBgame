@@ -3,30 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Snake Game</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Mining Race</title>
+  <link rel="stylesheet" href="style (1).css">
 </head>
 <body>
   <div class="container">
-    <h1>Snake</h1>
+    <h1>블럭 레이스</h1>
     <div class="hud">
-      <div class="score">점수: <span id="score">0</span></div>
-      <button id="start">시작</button>
+      <div class="score">상태: <span id="status">대기</span></div>
+      <div class="controls">
+        <button id="start">시작</button>
+        <button id="pause">일시정지</button>
+        <button id="retry">다시하기</button>
+      </div>
     </div>
-    <div id="board" class="board"></div>
-    <div class="hint">방향키로 조작하세요. 스페이스로 일시정지/재시작</div>
+    <div class="tunnels">
+      <div class="tunnel" id="tun1"><div class="char" id="char1">⛏️</div></div>
+      <div class="tunnel" id="tun2"><div class="char" id="char2">⛏️</div></div>
+    </div>
+    <div id="board" class="race">
+      <div class="lane" id="lane1">
+        <div class="lane-title">플레이어 1</div>
+        <div class="counts" id="counts1"></div>
+        <div class="buttons">
+          <button data-p="0" data-type="sand">모래</button>
+          <button data-p="0" data-type="dirt">흙</button>
+          <button data-p="0" data-type="stone">돌</button>
+          <button data-p="0" data-type="obsidian">흑요석</button>
+        </div>
+        <div class="blocks" id="blocks1"></div>
+        <div class="bar"><div class="fill" id="bar1"></div></div>
+        <div class="progress" id="prog1"></div>
+      </div>
+      <div class="lane" id="lane2">
+        <div class="lane-title">플레이어 2</div>
+        <div class="counts" id="counts2"></div>
+        <div class="buttons">
+          <button data-p="1" data-type="sand">모래</button>
+          <button data-p="1" data-type="dirt">흙</button>
+          <button data-p="1" data-type="stone">돌</button>
+          <button data-p="1" data-type="obsidian">흑요석</button>
+        </div>
+        <div class="blocks" id="blocks2"></div>
+        <div class="bar"><div class="fill" id="bar2"></div></div>
+        <div class="progress" id="prog2"></div>
+      </div>
+    </div>
+    <div id="wordgame" class="wordgame hidden">
+      <div class="wg-title">끝말잇기</div>
+      <div class="wg-info">
+        <span>남은 시간: <span id="wgTotal">90</span>s</span>
+        <span>턴 남은 시간: <span id="wgTurn">7</span>s</span>
+        <span>현재 턴: <span id="wgPlayer">플레이어 1</span></span>
+      </div>
+      <div class="wg-last">시작 단어: <span id="wgLast">가</span></div>
+      <div class="wg-input">
+        <input id="wgText" type="text" placeholder="단어 입력">
+        <button id="wgSubmit">제출</button>
+      </div>
+      <div class="wg-score">P1: <span id="wgP1">0</span> / P2: <span id="wgP2">0</span></div>
+    </div>
     <audio id="bgm" src="Pixel Heartache_.mp3" loop preload="auto"></audio>
     <div id="overlay" class="overlay hidden">
       <div class="overlay-content">
         <h2 id="overlayTitle"></h2>
-        <img id="overlayImg" src="clear.png" alt="clear">
-        <div class="final">최종 점수: <span id="final">0</span></div>
+        <img id="overlayImg" src="clear - 복사본.png" alt="clear">
+        <div class="final">결과: <span id="final">0</span></div>
         <div class="overlay-actions">
-          <button id="retry">다시하기</button>
+          <button id="ovRetry">다시하기</button>
         </div>
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script (1).js"></script>
 </body>
 </html>
