@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Snake</h1>
+    <div class="hud">
+      <div class="score">점수: <span id="score">0</span></div>
+      <button id="start">시작</button>
+    </div>
+    <div id="board" class="board"></div>
+    <div class="hint">방향키로 조작하세요. 스페이스로 일시정지/재시작</div>
+    <audio id="bgm" src="Pixel Heartache_.mp3" loop preload="auto"></audio>
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-content">
+        <h2 id="overlayTitle"></h2>
+        <img id="overlayImg" src="clear.png" alt="clear">
+        <div class="final">최종 점수: <span id="final">0</span></div>
+        <div class="overlay-actions">
+          <button id="retry">다시하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
